@@ -34,6 +34,10 @@ failure. It will restart after a timeout and will rerun the commands in the same
 
 If the failure causes the daemon to die then it will be respawned by a ConfigWatcher service.
 
+### Idempotence
+
+The configuration is not idempotent in a strict sense. The user can easily introduce scripts that break it. 
+
 ## Usage
 
 ### Installation
