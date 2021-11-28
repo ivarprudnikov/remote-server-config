@@ -1,0 +1,15 @@
+[Unit]
+Description=This service keeps a config watcher script running all the time
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+User=root
+Group=root
+Restart=always
+WorkingDirectory=/var/configwatcher
+ExecStart=/usr/bin/python3 /usr/sbin/config-watcher-daemon.py
+
+[Install]
+WantedBy=multi-user.target
